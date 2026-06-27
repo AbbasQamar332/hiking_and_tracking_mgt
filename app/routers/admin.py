@@ -6,7 +6,7 @@ from app.auth import UserRole, get_current_user, require_role
 from app.database import get_db
 from app.models.booking import Booking
 from app.models.hiking_event import HikingEvent
-from app.models.mountain import Mountain
+
 from app.models.review import Review
 from app.models.user import User
 from app.schemas.event import EventRead

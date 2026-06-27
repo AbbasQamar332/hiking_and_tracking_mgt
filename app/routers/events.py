@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from app.auth import UserRole, require_role
 from app.database import get_db
 from app.models.hiking_event import HikingEvent
-from app.models.mountain import Mountain
+
 from app.models.user import User
 from app.schemas.event import EventCreate, EventRead, EventUpdate
 

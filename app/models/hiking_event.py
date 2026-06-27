@@ -17,7 +17,7 @@ class HikingEvent(Base):
     event_date: Mapped[datetime] = mapped_column(DateTime, nullable=False)
     capacity: Mapped[int] = mapped_column(Integer, nullable=False)
     difficulty: Mapped[str] = mapped_column(String(50), nullable=False, default="Moderate")
-    mountain_id: Mapped[int | None] = mapped_column(ForeignKey("mountains.id", ondelete="SET NULL"), nullable=True)
+   
     duration_days: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
     gear_required: Mapped[str | None] = mapped_column(Text, nullable=True)
     is_approved: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
@@ -26,6 +26,6 @@ class HikingEvent(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
 
     owner = relationship("User", back_populates="events")
-    mountain = relationship("Mountain", back_populates="events")
+    
     bookings = relationship("Booking", back_populates="event", cascade="all, delete-orphan")
     reviews = relationship("Review", back_populates="event", cascade="all, delete-orphan")
